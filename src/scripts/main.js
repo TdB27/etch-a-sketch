@@ -4,15 +4,16 @@ const buttonErase = document.querySelector('.navigation__erase');
 const buttonClear = document.querySelector('.navigation__clear');
 const buttonGrid = document.querySelector('.navigation__grid');
 let changeParagraph = document.querySelector('.navigation__frame-size-box__paragraph');
-let input = document.querySelector('.navigation__frame-size-input');
+let inputRange = document.querySelector('.navigation__frame-size-input');
+let blocoBox = document.querySelector('.bloco-desenho__box')
 
 buttonDefault.onclick = () => changeColor('default')
 buttonRandom.onclick = () => changeColor('random');
 buttonErase.onclick = () => changeColor('erase');
 buttonClear.onclick = () => changeColor('clear');
 buttonGrid.onclick = () => changeColor('grid');
-input.onmousemove = (e) => changeParagraphforInput(e.target.value)
-
+inputRange.onclick = (e) => changeSizeGrid(e.target.value)
+inputRange.onmousemove = (e) => changeParagraphforInput(e.target.value)
 
 
 function changeParagraphforInput(value) {
@@ -32,3 +33,23 @@ function changeColor(value) {
         }
     })
 }
+
+
+//chamar o blocoBox
+// criar um filho com a classe grid
+// alterar essas propriedades
+// criar os filhos de acordo com o value
+function changeSizeGrid(value) {
+    blocoBox.innerHTML = ''
+    blocoBox.setAttribute('style', `grid-template-columns: repeat(${value}, 1fr); grid-template-rows: repeat(${value}, 1fr)`)
+    let divBox = document.createElement('div');
+    divBox.classList.add('grid')
+    
+    for(let divBox = 0; divBox < value; divBox++) {
+        console.log(divBox)
+    }
+    //TRANSFORMAR O LOOP DE NUMEROS EM DIVS
+    blocoBox.appendChild(divBox)
+    
+}
+
