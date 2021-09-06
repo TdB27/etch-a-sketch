@@ -6,8 +6,6 @@
 .bloco-desenho__box {
     width: 100%;
     height: 100%;
-    
-    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
@@ -18,5 +16,4 @@
     height: 100%;
     background-color: #fff;
     border: 1px solid #000;
-    border-radius: 10px;
 }
