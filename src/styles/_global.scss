@@ -20,10 +20,12 @@ h1 {
 
 button {
     font-family: $raleway;
+    font-weight: 400;
     font-size: 20px;
     width: 170px;
     height: 50px;
     text-transform: capitalize;
+    color: #fff;
     background-color: $violet;
     border-radius: 10px;
     cursor: pointer;

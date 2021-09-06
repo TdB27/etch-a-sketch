@@ -21,3 +21,10 @@
     width: 100%;
     cursor: pointer;
 }
+
+.active {
+    box-shadow: inset -4px -3px 20px 3px  $violet-light;
+    background-color: $violet-button;
+    color: #000;
+    font-weight: 600;
+}
