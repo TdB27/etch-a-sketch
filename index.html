@@ -18,11 +18,11 @@
             <div class="main-center">
                 <aside>
                     <nav class="navigation">
-                        <button class="navigation__default active">default color</button>
-                        <button class="navigation__colors-random">random color</button>
-                        <button class="navigation__erase">erase</button>
-                        <button class="navigation__clear">clear</button>
-                        <button class="navigation__grade">grade</button>
+                        <button class="navigation__default active" onclick="changeColor('default')" data-color="default">default color</button>
+                        <button class="navigation__colors-random" onclick="changeColor('random')" data-color="random">random color</button>
+                        <button class="navigation__erase" onclick="changeColor('erase')" data-color="erase">erase</button>
+                        <button class="navigation__clear" onclick="changeColor('clear')" data-color="clear">clear</button>
+                        <button class="navigation__grade" onclick="changeColor('grade')" data-color="grade">grade</button>
                         <div class="navigation__frame-size">
                             <div class="navigation__frame-size-box">
                                 <p>10 x 10</p>
@@ -139,6 +139,6 @@
         </main>
     </div>
     <footer></footer>
-    <script src="./src/scripts/script.js"></script>
+    <script src="./src/scripts/main.js"></script>
 </body>
 </html>
