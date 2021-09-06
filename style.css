@@ -1,1 +1,1 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap");html{margin:0;padding:0;box-sizing:content-box}body{background:#d3cadd}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap");body{height:100vh;margin:0;padding:0;box-sizing:border-box;background:#d3cadd;display:flex}body #etch-a-sketch{width:80%;height:700px;margin:auto;border:1px solid #000}
