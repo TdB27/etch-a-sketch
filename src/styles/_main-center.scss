@@ -3,7 +3,69 @@
     height: 100%;
     display: flex;
 
-    aside {
-        height: 100%;
+    @media(max-width: $mobile) {
+        justify-content: center;
+    }
+}
+
+.main-center__aside {
+    height: 100%;
+
+    &.modal {
+        @media(max-width: $mobile) {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, .7);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.main-center__aside__hamburger-bg {
+
+    @media(max-width: $mobile) {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, .2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 160px;
+        left: 0px;
+        border-radius: 0 10px 10px 0;
+    }
+
+    &.left {
+        left: 210px;
+    }
+}
+
+.main-center__aside__hamburger {
+    @media(max-width: $mobile) {
+        width: 20px;
+        height: 15px;
+        border-top: 1px solid #fff;
+        position: relative;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 20px;
+            position: absolute;
+            left: 0;
+            border-top: 1px solid #fff;
+        }
+
+        &::before {
+            top: 5px;
+        }
+
+        &::after {
+            top: 12px;            
+        }
     }
 }
