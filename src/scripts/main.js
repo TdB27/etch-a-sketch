@@ -42,14 +42,11 @@ function changeColor(value) {
 function changeSizeGrid(value) {
     blocoBox.innerHTML = ''
     blocoBox.setAttribute('style', `grid-template-columns: repeat(${value}, 1fr); grid-template-rows: repeat(${value}, 1fr)`)
-    let divBox = document.createElement('div');
-    divBox.classList.add('grid')
     
-    for(let divBox = 0; divBox < value; divBox++) {
-        console.log(divBox)
+    for(let i = 0; i < value * value; i++) {
+        divBox = document.createElement('div');
+        divBox.classList.add('grid')
+        blocoBox.appendChild(divBox)
     }
-    //TRANSFORMAR O LOOP DE NUMEROS EM DIVS
-    blocoBox.appendChild(divBox)
-    
 }
 
