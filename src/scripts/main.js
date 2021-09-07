@@ -7,15 +7,23 @@ let changeParagraph = document.querySelector('.navigation__frame-size-box__parag
 let inputRange = document.querySelector('.navigation__frame-size-input');
 let blocoBox = document.querySelector('.bloco-desenho__box');
 
-
-buttonDefault.onclick = () => {changeButton('default'), changeColor('default')};
-buttonRandom.onclick = () => {changeButton('random'), changeColor('random')};
-buttonErase.onclick = () => {changeButton('erase'), changeColor('erase')};
+buttonDefault.onclick = () => chooseButton('default');
+buttonRandom.onclick = () => chooseButton('random');
+buttonErase.onclick = () => chooseButton('erase');
 buttonClear.onclick = () => clearOrToogleGrid('clear');
-buttonGrid.onclick = () => {changeButton('grid'), clearOrToogleGrid('toogle')};
+buttonGrid.onclick = () => chooseButtonGrid('toogle');
 inputRange.onclick = e => changeSizeGrid(e.target.value)
 inputRange.onmousemove = e => changeParagraphforInput(e.target.value)
 
+function chooseButton(value) {
+    changeButton(value)
+    changeColor(value)
+}
+
+function chooseButtonGrid(value) {
+    changeButton(value)
+    clearOrToogleGrid(value)
+}
 
 function changeParagraphforInput(value) {
     changeParagraph.innerHTML = `${value} x ${value}`
@@ -42,6 +50,7 @@ function changeSizeGrid(value) {
     for(let i = 0; i < value * value; i++) {
         divBox = document.createElement('div');
         divBox.classList.add('grid')
+        divBox.classList.add('border')
         blocoBox.appendChild(divBox)
     }
 
@@ -62,7 +71,6 @@ function changeColor(value) {
             } else if (value === 'erase'){
                 item.setAttribute('style', 'background-color: #FFFFFF')
             }
-            
         })
     })
 }
