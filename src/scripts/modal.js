@@ -1,10 +1,10 @@
 const showModal = document.querySelector('.main-center__aside');
-const moveHamburger = document.querySelector('.main-center__aside__hamburger-bg');
+const showNav = document.querySelector('.main-center__aside__sidebar');
 const hamburger = document.querySelector('.main-center__aside__hamburger');
-const showNav = document.querySelector('.navigation');
+const bgNav = document.querySelector('.navigation');
 
 hamburger.addEventListener('click', () => {
     showModal.classList.toggle('modal')
-    moveHamburger.classList.toggle('left')
-    showNav.classList.toggle('show')
+    showNav.classList.toggle('left')
+    bgNav.classList.toggle('show')
 })

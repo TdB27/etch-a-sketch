@@ -9,14 +9,12 @@
     align-items: center;
 
     @media(max-width: $mobile) {
-        display: none;
-
+        margin-right: 40px;
+        background-color: rgba(0, 0, 0, .2);
         &.show {
             display: flex;
             height: 560px;
-            width: 210px;
-            background-color: rgba(0, 0, 0, .2);
-            margin-top: 80px;
+            width: 210px;            
             border-radius: 0 10px 10px 0;
         }
     }
