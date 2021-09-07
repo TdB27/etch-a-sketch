@@ -7,20 +7,20 @@ let changeParagraph = document.querySelector('.navigation__frame-size-box__parag
 let inputRange = document.querySelector('.navigation__frame-size-input');
 let blocoBox = document.querySelector('.bloco-desenho__box')
 
-buttonDefault.onclick = () => changeColor('default')
-buttonRandom.onclick = () => changeColor('random');
-buttonErase.onclick = () => changeColor('erase');
-buttonClear.onclick = () => changeColor('clear');
-buttonGrid.onclick = () => changeColor('grid');
-inputRange.onclick = (e) => changeSizeGrid(e.target.value)
-inputRange.onmousemove = (e) => changeParagraphforInput(e.target.value)
+buttonDefault.onclick = () => {changeButton('default'), changeColor('default')};
+buttonRandom.onclick = () => {changeButton('random'), changeColor('random')};
+buttonErase.onclick = () => {changeButton('erase'), changeColor('erase')};
+buttonClear.onclick = () => changeButton('clear');
+buttonGrid.onclick = () => changeButton('grid');
+inputRange.onclick = e => changeSizeGrid(e.target.value)
+inputRange.onmousemove = e => changeParagraphforInput(e.target.value)
 
 
 function changeParagraphforInput(value) {
     changeParagraph.innerHTML = `${value} x ${value}`
 }
 
-function changeColor(value) {
+function changeButton(value) {
     let changeColorButton = document.querySelectorAll('[data-color]');
     
     changeColorButton.forEach(item => {
@@ -34,11 +34,6 @@ function changeColor(value) {
     })
 }
 
-
-//chamar o blocoBox
-// criar um filho com a classe grid
-// alterar essas propriedades
-// criar os filhos de acordo com o value
 function changeSizeGrid(value) {
     blocoBox.innerHTML = ''
     blocoBox.setAttribute('style', `grid-template-columns: repeat(${value}, 1fr); grid-template-rows: repeat(${value}, 1fr)`)
@@ -48,5 +43,29 @@ function changeSizeGrid(value) {
         divBox.classList.add('grid')
         blocoBox.appendChild(divBox)
     }
+    
+    changeButton('default')
+    changeColor('default')
 }
+
+function changeColor(value) {
+    const changeStyle = document.querySelectorAll('.grid');
+    changeStyle.forEach(item => {
+        item.addEventListener('click', () => {
+            if(value == 'default'){
+                item.setAttribute('style', 'background-color: #000000')
+            } else if (value == 'random'){
+                let backgroundR = [Math.floor(Math.random() * 255)];
+                let backgroundG = [Math.floor(Math.random() * 255)];
+                let backgroundB = [Math.floor(Math.random() * 255)];
+                item.setAttribute('style', `background-color: rgb(${backgroundR}, ${backgroundG}, ${backgroundB})`)
+            } else if (value === 'erase'){
+                item.setAttribute('style', 'background-color: #FFFFFF')
+            }
+            
+        })
+    })
+}
+
+window.onload = () => changeColor('default')
 
