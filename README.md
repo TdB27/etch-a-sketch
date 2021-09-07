@@ -1,6 +1,8 @@
 # ETCH-A-SKETCH
 
 The idea of ​​this project is to create a Stetchbook
+<br />
+Check the project running here https://tdb27.github.io/etch-a-sketch/
 
 ## Overview
 
