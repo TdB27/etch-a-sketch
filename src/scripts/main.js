@@ -5,14 +5,14 @@ const buttonClear = document.querySelector('.navigation__clear');
 const buttonGrid = document.querySelector('.navigation__grid');
 let changeParagraph = document.querySelector('.navigation__frame-size-box__paragraph');
 let inputRange = document.querySelector('.navigation__frame-size-input');
-let blocoBox = document.querySelector('.bloco-desenho__box')
+let blocoBox = document.querySelector('.bloco-desenho__box');
 
 
 buttonDefault.onclick = () => {changeButton('default'), changeColor('default')};
 buttonRandom.onclick = () => {changeButton('random'), changeColor('random')};
 buttonErase.onclick = () => {changeButton('erase'), changeColor('erase')};
-buttonClear.onclick = () => clearGrid();
-buttonGrid.onclick = () => changeButton('grid');
+buttonClear.onclick = () => clearOrToogleGrid('clear');
+buttonGrid.onclick = () => {changeButton('grid'), clearOrToogleGrid('toogle')};
 inputRange.onclick = e => changeSizeGrid(e.target.value)
 inputRange.onmousemove = e => changeParagraphforInput(e.target.value)
 
@@ -50,8 +50,7 @@ function changeSizeGrid(value) {
 }
 
 function changeColor(value) {
-    const changeStyle = document.querySelectorAll('.grid');
-    changeStyle.forEach(item => {
+    document.querySelectorAll('.grid').forEach(item => {
         item.addEventListener('click', () => {
             if(value == 'default'){
                 item.setAttribute('style', 'background-color: #000000')
@@ -68,10 +67,13 @@ function changeColor(value) {
     })
 }
 
-function clearGrid() {
-    const changeStyle = document.querySelectorAll('.grid');
-    changeStyle.forEach(item => {
-        item.setAttribute('style', 'background-color: #FFFFFF')
+function clearOrToogleGrid(value) {
+    document.querySelectorAll('.grid').forEach(item => {
+        if(value === 'clear') {
+            item.setAttribute('style', 'background-color: #FFFFFF')
+        } else if (value === 'toogle') {
+            item.classList.toggle('border');
+        }
     })
 }
 
