@@ -7,10 +7,11 @@ let changeParagraph = document.querySelector('.navigation__frame-size-box__parag
 let inputRange = document.querySelector('.navigation__frame-size-input');
 let blocoBox = document.querySelector('.bloco-desenho__box')
 
+
 buttonDefault.onclick = () => {changeButton('default'), changeColor('default')};
 buttonRandom.onclick = () => {changeButton('random'), changeColor('random')};
 buttonErase.onclick = () => {changeButton('erase'), changeColor('erase')};
-buttonClear.onclick = () => changeButton('clear');
+buttonClear.onclick = () => clearGrid();
 buttonGrid.onclick = () => changeButton('grid');
 inputRange.onclick = e => changeSizeGrid(e.target.value)
 inputRange.onmousemove = e => changeParagraphforInput(e.target.value)
@@ -43,7 +44,7 @@ function changeSizeGrid(value) {
         divBox.classList.add('grid')
         blocoBox.appendChild(divBox)
     }
-    
+
     changeButton('default')
     changeColor('default')
 }
@@ -64,6 +65,13 @@ function changeColor(value) {
             }
             
         })
+    })
+}
+
+function clearGrid() {
+    const changeStyle = document.querySelectorAll('.grid');
+    changeStyle.forEach(item => {
+        item.setAttribute('style', 'background-color: #FFFFFF')
     })
 }
 

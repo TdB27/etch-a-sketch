@@ -9,6 +9,14 @@
     align-items: center;
 }
 
+.navigation__clear:active,
+.active {
+    box-shadow: inset -4px -3px 20px 3px  $violet-light;
+    background-color: $violet-button;
+    color: #000;
+    font-weight: 600;
+}
+
 .navigation__frame-size {
     width: 170px;
     display: flex;
@@ -20,11 +28,4 @@
 .navigation__frame-size-input {
     width: 100%;
     cursor: pointer;
-}
-
-.active {
-    box-shadow: inset -4px -3px 20px 3px  $violet-light;
-    background-color: $violet-button;
-    color: #000;
-    font-weight: 600;
 }
