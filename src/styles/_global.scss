@@ -5,11 +5,12 @@ body {
     box-sizing: border-box;
     background: $violet-light;
     display: flex;
+    flex-direction: column;
 
     #etch-a-sketch {
         width: 800px;
-        height: 700px;
-        margin: auto;
+        height: 100vh;
+        margin: auto auto 0;
     }
 }
 
