@@ -12,8 +12,9 @@ buttonRandom.onclick = () => chooseButton('random');
 buttonErase.onclick = () => chooseButton('erase');
 buttonClear.onclick = () => clearOrToogleGrid('clear');
 buttonGrid.onclick = () => chooseButtonGrid('toogle');
-inputRange.onclick = e => changeSizeGrid(e.target.value)
+inputRange.onchange = e => changeSizeGrid(e.target.value)
 inputRange.onmousemove = e => changeParagraphforInput(e.target.value)
+inputRange.ontouchmove = e => changeParagraphforInput(e.target.value)
 
 function chooseButton(value) {
     changeButton(value)
